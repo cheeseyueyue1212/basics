@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question</title>
+</head>
+<body>
+    question
+</body>
+<script>
+
+function formatNumber(str) {
+
+// ["0", "9", "8", "7", "6", "5", "4", "3", "2", "1"]
+return str.split("").reduce((prev, next, index) => {
+  return  prev + ((index % 3) ? next : (next + ','))
+})
+}
+
+console.log(formatNumber("1234567890")) // 1,234,567,890
+
+
+</script>
+</html>

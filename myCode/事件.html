@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+</head>
+<body>
+    <div id="div">事件啦</div>
+    <form action="">
+        <input type='button' value='Click Me111' name="username" id="myBtn" draggable="true">
+        <!-- <input type='button' value='Click Me' onclick="console.log(event)"> -->
+
+    </form>
+</body>
+
+<script>
+    // IE: 事件冒泡;
+    // 其他: 事件捕获;
+    var btn = document.getElementById('myBtn')
+    // btn.onclick = function() {
+    //     console.log(window.event.srcElement)
+    // }
+
+    btn.addEventListener('click', function(event) {
+        console.log(event.srcElement)
+    },false)
+
+
+
+    window.onmessage = function(event) {
+        console.log(event)
+        console.log(event.data);
+        event.source.postMessage("Received!", "*");
+    }
+</script>
+</html>

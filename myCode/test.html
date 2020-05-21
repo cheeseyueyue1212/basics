@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>demo</title>
+</head>
+<body>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src='./promise.js'></script>
+<script type="text/babel">
+class Foo {
+  static bar() {
+    this.baz();
+  }
+    static baz() {
+        console.log('hello');
+    }
+  baz() {
+    console.log('world');
+  }
+}
+
+Foo.bar() // hello
+</script>
+
+</body>
+</html>
