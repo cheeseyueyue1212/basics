@@ -10,7 +10,7 @@
     })
 
 ```
-结果：
+结果1222：
 > setTimeout
 > setImmediate
 或者
