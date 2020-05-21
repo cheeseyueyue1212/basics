@@ -13,4 +13,4 @@ getSum(arr);
 function getSum(arr) {
     return eval(arr.join('+'))
 }
-getSum(arr);111
+getSum(arr);
