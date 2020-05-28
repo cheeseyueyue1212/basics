@@ -10,23 +10,21 @@
 </body>
 <script>
 
-function throttle(fn,delay){
-    let flag = true;
-    return () => {
-      if(!flag) return;
-      flag = false;
-      var timer = setTimeout(() => {
-        fn();
-        flag = true;
-      }, delay)
-    }
+  
+var fn;
+function foo() {
+  var a = 2;
+  function baz() {
+    console.log(a);
+  }
+  fn = baz;
+}
+function bar() {
+  fn();
 }
 
-function fn() {
-    console.log(111)
-}
-
-window.onresize = throttle(fn, 1000);
+foo();
+bar(); // 2
 
 </script>
 </html>

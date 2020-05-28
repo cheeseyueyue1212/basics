@@ -54,8 +54,24 @@ for (var i = 1; i <= 5; i++) {
     }
   })(i), i * 1000);
 }
+
+//方法五：参数传递按照值传递
+function fn(i) {
+    setTimeout(() => {
+        console.log(i);
+    }, 1000)
+}
+
+for (var i = 1; i <= 5; i++) {
+    fn(i)
+}
 ```
+
 ### 原因：var可以变量提升，setTimeout 内部拿到的是循环完的，只是5
 
 ### 知识点2:
-setTimeout 执行完返回一个唯一ID，比如89。 用来clearTimeout.
+> setTimeout 执行完返回一个唯一ID，比如89。 用来clearTimeout.
+
+### 闭包的形成条件:
+1. 在函数内部创建新的函数
+2. 新的函数执行时，访问了外部函数的变量对象
