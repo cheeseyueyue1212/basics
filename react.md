@@ -63,11 +63,11 @@
     ```
 
 ## react生命周期
->钩子：
+>> 钩子：
     * constructor:
-       > 1. 构造函数，在创建组件的时候调用一次  
-       > 2. 组件初始化开始  
-       > 3. 初始化state  
+       > 构造函数，在创建组件的时候调用一次  
+       > 组件初始化开始  
+       > 初始化state  
 
     * getDefaultProps:
         > 设置默认的props,也可以用defaultProps设置组件的默认属性  
