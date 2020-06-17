@@ -63,7 +63,8 @@
     ```
 
 ## react生命周期
-* constructor:
+>钩子：
+    * constructor:
        > 1. 构造函数，在创建组件的时候调用一次  
        > 2. 组件初始化开始  
        > 3. 初始化state  
