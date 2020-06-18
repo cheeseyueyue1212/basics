@@ -19,8 +19,17 @@
         2. BFC 的区域不会与浮动元素的 float 重叠
         3. 独立的容器，内外元素互不影响
         4. 计算 BFC 高度，浮动元素也参与计算
+        5. 文字层不会被浮动层覆盖，环绕于周围
     #### 如何创建 BFC
         * float 不为none的时候
         * position 不为 static 或者 relative 的时候
         * display 与 table 相关的时候
         * overflow 为auto, hidden 的时候
+        * IE下为 Layout，可通过 zoom:1 触发
+    
+    #### 应用
+    * 阻止margin重叠
+    * 可以包含浮动元素 —— 清除内部浮动(清除浮动的原理是两个div都位于同一个 BFC 区域之中)
+    * 自适应两栏布局
+    * 可以阻止元素被浮动元素覆盖
+      
