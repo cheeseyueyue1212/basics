@@ -35,5 +35,3 @@
       
     #### 实例
       [两栏布局](../test.html)
-        
-      This is an [example link](http://example.com/ "With a Title"). 
