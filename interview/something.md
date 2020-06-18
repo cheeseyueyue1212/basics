@@ -14,8 +14,13 @@
 
 4. ### BFC(边距重叠解决方案)
     * BFC 的基本概念: Block Formatting Context, 块级格式化上下文，一个独立的块级渲染区域，该区域拥有一套渲染规格来约束块级盒子的布局，且与区域外部无关。
-    * BFC 的原理
+    #### BFC 的原理
         1. BFC 这个元素的垂直的边距会发生重叠
         2. BFC 的区域不会与浮动元素的 float 重叠
         3. 独立的容器，内外元素互不影响
         4. 计算 BFC 高度，浮动元素也参与计算
+    #### 如何创建 BFC
+        * float 不为none的时候
+        * position 不为 static 或者 relative 的时候
+        * display 与 table 相关的时候
+        * overflow 为auto, hidden 的时候
