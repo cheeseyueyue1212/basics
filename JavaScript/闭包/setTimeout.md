@@ -1,25 +1,11 @@
-## 闭包
+
 
 ```js
-function test() {
-    var a = 2,
-        b = 4;
-    function inner() {
-        var c;
-        c = a + b;
-        console.log(c);
-    }
-    return inner;
-}
-test();
-```
-
-```js
-for(var i = 0; i < 5; i++> {
+for(var i = 0; i < 5; i++) {
     setTimeout((i) => {
         console.log(i)
     },i*1000)
-})
+}
 
 ==> 输出：1 2 3 4 5
 //方法一：
@@ -71,7 +57,3 @@ for (var i = 1; i <= 5; i++) {
 
 ### 知识点2:
 > setTimeout 执行完返回一个唯一ID，比如89。 用来clearTimeout.
-
-### 闭包的形成条件:
-1. 在函数内部创建新的函数
-2. 新的函数执行时，访问了外部函数的变量对象

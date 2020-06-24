@@ -33,3 +33,32 @@ var outputs = (i) => {
     }, i * 1000)
 }
 ```
+
+### 红绿灯
+```js
+var arr = ['red', 'yellow', 'green'];
+var tasks = [];
+var test = function() {
+    for(var i = 0; i < arr.length; i++ ) {
+        ((j) => {
+            tasks.push(
+                new Promise(resolve => {
+                    setTimeout(() => {
+                        console.log(arr[j]);
+                        resolve();
+                    }, j * 1000)
+                })
+            )
+        }
+    
+        )(i)
+    }
+
+    Promise.all(tasks).then(() => {
+        setTimeout(() => {
+            test();
+        }, 1000);
+    })
+}
+test();
+```

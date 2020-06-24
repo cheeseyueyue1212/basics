@@ -1,6 +1,9 @@
 ### 使用 instanceof 操作符
 
 > 是用来判断 A 是否为 B 的实例
+
+若 **左侧的__proto__ === 右侧的prototype**,则返回true
+
 ```js
 alert(instance instanceof Object);//true
 alert(instance instanceof Father);//true
