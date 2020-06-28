@@ -4,24 +4,40 @@
 <meta charset="utf-8">
 <title>demo</title>
 </head>
+<style>
+  .myDiv {
+    border: 1px solid red;
+    width: 200px;
+    height: 2000px;
+  }
+</style>
 <body>
+  <div class="myDiv">111</div>
 
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script src='./promise.js'></script>
-<script type="text/babel">
-class Foo {
-  static bar() {
-    this.baz();
-  }
-    static baz() {
-        console.log('hello');
-    }
-  baz() {
-    console.log('world');
-  }
+<script>
+
+
+var throttle = function(func, delay) {
+     var timer = null;
+     var startTime = Date.now();
+     return function() {
+             var curTime = Date.now();
+             var remaining = delay - (curTime - startTime);
+             var context = this;
+             var args = arguments;
+             clearTimeout(timer);
+              if (remaining <= 0) {
+                    func.apply(context, args);
+                    startTime = Date.now();
+              } else {
+                    timer = setTimeout(func, remaining);
+              }
+      }
 }
-
-Foo.bar() // hello
+function handle() {
+      console.log(Math.random());
+}
+ window.addEventListener('scroll', throttle(handle, 1000));
 </script>
 
 </body>

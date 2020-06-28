@@ -25,6 +25,14 @@ let nameNum = names.reduce((pre,cur)=>{
 },[])
 console.log(nameNum); //[1, 2, 3, 4]
 
+或者
+
+let nameNum = names.reduce((pre,cur)=>{
+    if(!pre.includes(cur)) pre.push(cur)
+    return pre;
+},[])
+console.log(nameNum); //[1, 2, 3, 4]
+
 
 //方法三： filter
 let names = [1, 2, 3, 4, 4, 3];
