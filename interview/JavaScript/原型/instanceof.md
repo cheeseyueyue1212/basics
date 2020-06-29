@@ -1,6 +1,13 @@
 ### 使用 instanceof 操作符
-
+> 定义：能在实例的 原型对象链 中找到该构造函数的prototype属性所指向的 原型对象，就返回true
 > 是用来判断 A 是否为 B 的实例
+
+```js
+    // __proto__: 代表原型对象链
+    instance.[__proto__...] === instance.constructor.prototype
+
+    // return true
+```
 
 若 **左侧的__proto__ === 右侧的prototype**,则返回true
 
