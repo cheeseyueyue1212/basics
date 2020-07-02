@@ -1,10 +1,8 @@
-var foo = 1;
+var srcript = document.createElement('script');
+srcript.type = 'text/javascript'
+srcript.src = 'http://www.baidu.com?callback=handleCallBack'
+document.head.appendChild(srcript);
 
-function bar() {
-    foo = 10;
-    return;
-
-    function foo() {}
+function callbaack(res) {
+    //todo ...
 }
-bar();
-alert(foo);
