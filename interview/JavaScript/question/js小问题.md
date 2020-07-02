@@ -248,3 +248,24 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_
 参见：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
 
 > delete can't remove certain properties of predefined objects (like Object, Array, Math etc). These are described in ECMAScript 5 and later as non-configurable
+
+
+#13
+
+    var foo = {n: 1};
+    var bar = foo;
+    foo.x = foo = {n: 2};
+
+var a = {n:1}; /*定义a，赋值为{n:1}，假设指向存储地址为add_1*/
+var b = a; /*定义b，赋值为a，指向同一存储地址add_1*/  
+a.x = a = {n:2};
+/*（1）：定义a.x，赋值为a，即{n:1}，存储地址add_1上面的内容被更改
+  （2）：a.x重新赋值为{n:2}，存储地址add_1上面的内容被更改
+  （3）：a重新赋值为{n:2}，更改存储地址add_2*/
+alert(a.x);
+/*现在a的存储地址add_2，内容为{n:2}，上面并不存在a.x属性，所以为undefined*/ 
+alert(b.x);
+/*现在b的存储地址add_1，内容为{n:1,x:{n:2}}，所以b.x为{n:2}*/ 
+
+
+**读取内存地址是从左到右，赋值是从右到左**
