@@ -46,7 +46,7 @@
          > 触发时间： update发生的时候， 在render之后，在组件dom渲染之前；返回一个值，作为componentDidUpdate的第三个参数；  
          > 该函数在最新的渲染输出提交给DOM前将立即调用，它让你的组件能在当前的值要改变前获取它们。这一生命周期返回的任何值会 作为参数被传递给componentDidUpdate（）  
 
-    * componentDidUpdate(prevProps, prevStaet) {}:
+    * componentDidUpdate(prevProps, prevState) {}:
          > 数据修改成功，组件更新完成后调用  
          > 除了首次render之后调用componentDidMount,其他render结束之后都会调用componentDidUpdate  
          > 通过prevProps和prevState访问修改之前的props和state  
