@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        .float{
+			width:300px;height:300px;
+			float:left;
+			background: green;
+			opacity: .5;
+		}
+		p{
+			background:red;
+		}
+		/* .clear{
+		    clear:both;
+		} */
+
+        .content:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" >
+        <div class='float'></div>
+        </div>	
+        <div class='clear'></div>
+	    <p>some text</p>
+    </div>
+</body>
+
+<script>
+    /* 
+        1) 
+        .content:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        2) 
+        父级：overflow: hidden
+        3) 浮动元素下边添加 div { clear: both }
+    */
+</script>
+</html>
