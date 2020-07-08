@@ -14,31 +14,49 @@
 <body>
   <div class="myDiv">111</div>
 
-<script>
-
-
-var throttle = function(func, delay) {
-     var timer = null;
-     var startTime = Date.now();
-     return function() {
-             var curTime = Date.now();
-             var remaining = delay - (curTime - startTime);
-             var context = this;
-             var args = arguments;
-             clearTimeout(timer);
-              if (remaining <= 0) {
-                    func.apply(context, args);
-                    startTime = Date.now();
-              } else {
-                    timer = setTimeout(func, remaining);
-              }
-      }
-}
-function handle() {
-      console.log(Math.random());
-}
- window.addEventListener('scroll', throttle(handle, 1000));
-</script>
 
 </body>
+<script>
+      function setCookie(name, value, expires, path, domain, secure) {
+            var cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+            if (expires instanceof Date) {
+                  cookieText += '; expires=' + expires;
+            }
+            if (path) {
+                  cookieText += '; expires=' + expires;
+            }
+            if (domain) {
+                  cookieText += '; domain=' + domain;
+            }
+            if (secure) {
+                  cookieText += '; secure';
+            }
+            document.cookie = cookieText;
+      }
+
+      //获取cookie
+      function getCookie(name) {
+            var cookieName = encodeURIComponent(name) + '=';
+            var cookieStart = 'cheese=bangbangda; _octo=GH1.1.1687437288.1593675011; _ga=GA1.2.219529291.1593675034; tz=Asia%2FShanghai'.indexOf(cookieName);
+            var cookieValue = null;
+            if (cookieStart > -1) {
+                  var cookieEnd = 'cheese=bangbangda; _octo=GH1.1.1687437288.1593675011; _ga=GA1.2.219529291.1593675034; tz=Asia%2FShanghai'.indexOf(';', cookieStart);
+                  if (cookieEnd == -1) {
+                        cookieEnd = 'cheese=bangbangda; _octo=GH1.1.1687437288.1593675011; _ga=GA1.2.219529291.1593675034; tz=Asia%2FShanghai'.length;
+                  }
+                  cookieValue = decodeURIComponent('cheese=bangbangda; _octo=GH1.1.1687437288.1593675011; _ga=GA1.2.219529291.1593675034; tz=Asia%2FShanghai'.substring(cookieStart + cookieName.length, cookieEnd));
+            }
+            return cookieValue;
+      }
+
+      //删除cookie
+      function unsetCookie(name) {
+            document.cookie = name + "= ; expires=" + new Date(0);
+      }
+
+      
+      getCookie('cheese')
+
+</script>
+
 </html>
