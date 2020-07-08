@@ -49,3 +49,15 @@ unique(names);
 let names = [1, 2, 3, 4, 4, 3];
 
 [...new Set(names)]
+
+//方法五：Object.keys()
+//遍历，将数组的值添加到一个对象的属性名里，并给属性赋值，对象不能添加相同属性名，以这个为依据可以实现数组去重，然后用Object.keys(对象)返回这个对象可枚举属性组成的数组，这个数组就是去重后的数组。
+let a = ['1', '2', '3', 1,NaN,NaN,undefined,undefined,null,null, 'a', 'b', 'b'];
+const unique = arr => {
+    var obj = {}
+    arr.forEach(value => {
+        obj[value] = 0;//这步新添加一个属性，并赋值，如果不赋值的话，属性会添加不上去
+    })
+    return Object.keys(obj);//`Object.keys(对象)`返回这个对象可枚举属性组成的数组，这个数组就是去重后的数组
+}
+console.log(unique(a));//["1", "2", "3", "NaN", "undefined", "null", "a", "b"]

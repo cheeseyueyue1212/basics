@@ -15,17 +15,17 @@
 4. ### BFC(边距重叠解决方案)
     * BFC 的基本概念: Block Formatting Context, 块级格式化上下文，一个独立的块级渲染区域，该区域拥有一套渲染规格来约束块级盒子的布局，且与区域外部无关。
     #### BFC 的原理
-        1. BFC 这个元素的垂直的边距会发生重叠
-        2. BFC 的区域不会与浮动元素的 float 重叠
-        3. 独立的容器，内外元素互不影响
-        4. 计算 BFC 高度，浮动元素也参与计算
-        5. 文字层不会被浮动层覆盖，环绕于周围
+    1. BFC 这个元素的垂直的边距会发生重叠
+    2. BFC 的区域不会与浮动元素的 float 重叠
+    3. 独立的容器，内外元素互不影响
+    4. 计算 BFC 高度，浮动元素也参与计算
+    5. 文字层不会被浮动层覆盖，环绕于周围
     #### 如何创建 BFC
-        * float 不为none的时候
-        * position 不为 static 或者 relative 的时候
-        * display 与 table 相关的时候
-        * overflow 为auto, hidden 的时候
-        * IE下为 Layout，可通过 zoom:1 触发
+    * float 不为none的时候
+    * position 不为 static 或者 relative 的时候
+    * display 与 table 相关的时候
+    * overflow 为auto, hidden 的时候
+    * IE下为 Layout，可通过 zoom:1 触发
     
     #### 应用
     * 阻止margin重叠
@@ -35,3 +35,9 @@
       
     #### 实例
     [两栏布局](./两栏布局.html)
+
+## box-sizing
+box-sizing:border-box || content-box || inherit
+- 当使用content-box时：页面将采用标准模式来解析计算，content-box也是默认模式
+- 当使用border-box时，页面将采用怪异模式解析计算，怪异模式也称为IE模式
+- 当使用inherit时：页面将从父元素继承box-sizing的值
