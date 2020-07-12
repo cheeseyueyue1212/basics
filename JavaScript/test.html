@@ -17,16 +17,40 @@
 
 </body>
 <script>
-      arr = [1,1,2,3,4,4];
-      var newArr = [];
-      var res = arr.reduce((pre, cur, index, arr) => {
-      if(!pre.includes(cur)) {
-            pre.push(cur)
-      }
-      return pre
-      
-      }, [])
-      console.log(res)
+if (!Function.prototype.bind1) {
+  Function.prototype.bind1 = function (oThis) {
+    if (typeof this !== "function") {
+      // closest thing possible to the ECMAScript 5 internal IsCallable function
+      throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+    }
+
+    var aArgs = Array.prototype.slice.call(arguments, 1), 
+        fToBind = this, 
+        fNOP = function () {},
+        fBound = function () {
+          return fToBind.apply(this instanceof fNOP && oThis
+                                 ? this
+                                 : oThis || window,
+                               aArgs.concat(Array.prototype.slice.call(arguments)));
+        };
+
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+
+    return fBound;
+  };
+}
+
+
+function foo(c) {
+    this.b = 100;
+    console.log(this.a);
+    console.log(c);
+    return this.a;
+}
+
+var func =  foo.bind1({a:1},20);
+new func();//undefined 20，通过new创建对象func，bind绑定的c依旧起作用
 </script>
 
 </html>
