@@ -73,7 +73,7 @@ let a = aaa.next()
 想要Generator函数执行下一步，必须调用遍历器对象的next方法，使得指针移向下一个状态。也就是说，每次调用next方法，内部指针就从函数头部或上一次停下来的地方开始执行，直到遇到下一个yield表达式或return语句。由此可见，Generator 函数是分段执行的，yield表达式是暂停执行的标记，而next方法可以恢复执行。也就是上面说的可以交出函数的执行权。
 上面对Generator函数做了一个简单的介绍，接下来说一下async/await和Generator。
 **根据阮一峰老师的介绍，async函数就是Generator函数的语法糖。**
-[await](./img/await.png)
+![await](./img/await.png)
 代码上看起来，async函数就是将 Generator 函数的星号（*）替换成async，将yield替换成await。
 
 ### 实际上async函数对Generator函数的改进，体现在一下四点：
