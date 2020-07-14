@@ -1,3 +1,4 @@
+## 1. promsie async 问题
 ```js
 async function async1() {     
     console.log("async1 start");      
@@ -36,3 +37,14 @@ console.log('script end');  
 
 //settimeout
 ```
+
+## 2. Set 问题
+```js
+let s = new Set();
+s.add([1]);
+s.add([1]);console.log(s.size);
+```
+结果：2
+两个数组[1]并不是同一个值，它们分别定义的数组，在内存中分别对应着不同的存储地址，因此并不是相同的值
+都能存储到Set结构中，所以size为2
+

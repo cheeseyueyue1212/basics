@@ -101,7 +101,7 @@ Object.getPrototypeOf(Dog) === Animate   // true
 ```
 
 ## super 关键字
-super这个关键字，既可以当作**函数使用**，也可以**当作对象使用**
+super这个关键字，既可以当作**函数使用**，也可以当作**对象使用**
 ### 1. super作为函数使用
 super 作为函数调用时，代表父类的构造函数。ES6 要求，子类的构造函数必须执行一次super函数。并且，super() 只能用在子类的构造函数之中。
 ```js
@@ -149,4 +149,5 @@ dog.toString()
 //  我是父类实例的方法
 ```
 子类 Dog 当中的 super.num()，就是将 super 当作一个对象使用。这时，super 在普通方法之中，指向Animate.prototype，所以 super.num() 就相当于 Animate.prototype.num()
+
 **注意**： 由于super指向父类的原型对象，所以定义在父类 Animate 实例上的方法或属性，是无法通过 super 调用的。

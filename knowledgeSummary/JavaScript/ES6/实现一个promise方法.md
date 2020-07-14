@@ -1,3 +1,6 @@
+# 实现一个promise方法
+```js
+//创建一个Promise的类
 class Promise {
     constructor(executer) { //构造函数constructor里面是个执行器
         this.status = 'pending'; //默认的状态 pending
@@ -36,3 +39,4 @@ class Promise {
         }
     }
 }
+```
