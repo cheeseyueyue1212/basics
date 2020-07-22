@@ -5,7 +5,7 @@
 ```js
     let a = ['1','2','3','4'];
     let result = a.map(function (value, index, array) {
-    return value + '新数组的新元素'
+        return value + '新数组的新元素'
     });
     console.log(result, a); 
     // ["1新数组的新元素","2新数组的新元素","3新数组的新元素","4新数组的新元素"] ["1","2","3","4"]

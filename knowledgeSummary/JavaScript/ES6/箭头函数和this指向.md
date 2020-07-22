@@ -96,15 +96,15 @@
 
 ```js
     var myObj = {
-    name : "极客时间", 
-    showThis: function(){
-        console.log(this)
-        var self = this
-        function bar(){
-        self.name = "极客邦"
+        name : "极客时间", 
+        showThis: function(){
+            console.log(this)
+            var self = this
+            function bar(){
+                self.name = "极客邦"
+            }
+            bar()
         }
-        bar()
-    }
     }
     myObj.showThis()
     console.log(myObj.name)
@@ -118,8 +118,8 @@
     showThis: function(){
         console.log(this) // {name: "极客时间", showThis: ƒ}
         var bar = ()=>{
-        this.name = "极客邦"
-        console.log(this)  //  {name: "极客邦", showThis: ƒ}
+            this.name = "极客邦"
+            console.log(this)  //  {name: "极客邦", showThis: ƒ}
         }
         bar()
     }
@@ -142,15 +142,15 @@
 - 箭头函数比函数表达式更简洁，箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this。bind，call，apply只能调用传递参数，不可修改this指向
 ```js
     var obj = {
-    a: 10,
-    b: () => {
-        console.log(this.a); // undefined
-        console.log(this); // Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
-    },
-    c: function() {
-        console.log(this.a); // 10
-        console.log(this); // {a: 10, b: ƒ, c: ƒ}
-    }
+        a: 10,
+        b: () => {
+            console.log(this.a); // undefined
+            console.log(this); // Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
+        },
+        c: function() {
+            console.log(this.a); // 10
+            console.log(this); // {a: 10, b: ƒ, c: ƒ}
+        }
     }
     obj.b(); 
     obj.c();
@@ -158,15 +158,15 @@
 > 箭头函数不绑定this，会捕获其所在的上下文的this值，作为自己的this值。任何方法都改变不了其指向
 ```js
     var obj = {
-    a: 10,
-    b: function(){
-        console.log(this.a); //10
-    },
-    c: function() {
-        return ()=>{
+        a: 10,
+        b: function(){
             console.log(this.a); //10
+        },
+        c: function() {
+            return ()=>{
+                console.log(this.a); //10
+            }
         }
-    }
     }
     obj.b(); 
     obj.c()();
@@ -200,11 +200,11 @@
 ## 2、箭头函数没有原型
 ```js
     var a = ()=>{
-    return 1;
+        return 1;
     }
 
     function b(){
-    return 2;
+        return 2;
     }
 
     console.log(a.prototype);  // undefined
