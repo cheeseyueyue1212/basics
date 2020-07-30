@@ -27,13 +27,14 @@
          > DOM树渲染完成  
          > Tip: 建议在次请求数据  
 
+## 这个React 16之后有三个生命周期被废弃(但并未删除)
     * componentWillReceiveProps(nextProps){}:
          > props的数据发生改变的时候触发，在该函数内部this.props 属性还没改变的时候发生，但是可以通过第一个参数nextProps获取到的修改之后的props属性  
          > 在props被改变时触发，初始化render时不调用  
          > Tip1: 某些情况下，props没变也会触发该钩子函数，需要在方法里手动判断一下this.props和nextProps是否相同，不相同了才执行我的更新方法  
          > Tip2: 该函数一般用来更新依赖props的状态  
 
-    * shoudComponentUpdate(nextProps, nextState) {}:
+    * shouldComponentUpdate(nextProps, nextState) {}:
          > 组件接收到新的props或者state时调用，return true就会更新dom（使用diff算法更新），return false 能阻止更新（不调用render）  
          > 在函数内部state 和props还未改变，新的props和state在两个参数内  
          > 该方法并不会在初始化渲染或者使用forceUpdate（）时调用。  

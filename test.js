@@ -13,6 +13,37 @@ Promise.all1 = function(Promises) {
 }
 
 
+//节流
+function todo(fn, delay) {
+    var timer = null;
+    return function() {
+        if(!timer) {
+            timer = setTimeout(() => {
+                fn();
+                timer = null;
+            }, delay)
+        }
+    }
+}
+
+//防抖
+function todo(fn, delay) {
+    var timer = null;
+    return function() {
+        clearTimeout(itemer);
+        timer = setTimeout(fn, delay)
+    }
+}
+
+
+
+function handler(delay) {
+    console.log(111)
+}
+
+window.addEventListener('scroll', todo(handler, 1000))
+
+
 Promise.all1 = function(promises) {
     var results = [];
     return new Promise(async function(resolve, reject) {
