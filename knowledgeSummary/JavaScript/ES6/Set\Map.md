@@ -53,26 +53,26 @@ Map对象保存键值对。**任何值(对象或者原始值) 都可以作为一
     const map = new Map([['a', 1], ['b',  2]])
 
     for (let key of map.keys()) {
-    console.log(key)
+        console.log(key)
     }
     // "a"
     // "b"
 
     for (let value of map.values()) {
-    console.log(value)
+        console.log(value)
     }
     // 1
     // 2
 
     for (let item of map.entries()) {
-    console.log(item)
+        console.log(item)
     }
     // ["a", 1]
     // ["b", 2]
-
+s
     // 或者
     for (let [key, value] of map.entries()) {
-    console.log(key, value)
+        console.log(key, value)
     }
     // "a" 1
     // "b" 2
@@ -103,7 +103,7 @@ Map对象保存键值对。**任何值(对象或者原始值) 都可以作为一
     const obj = {}
     const map = new Map(['a', 111], ['b', 222])
     for(let [key,value] of map) {
-    obj[key] = value
+        obj[key] = value
     }
     console.log(obj) // {a:111, b: 222}
 ```

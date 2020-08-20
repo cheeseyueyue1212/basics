@@ -14,7 +14,7 @@
 ## 函数中的this：
 ```js
     function foo(){
-    console.log(this)
+        console.log(this)
     }
     foo()
     // 也是指向window
@@ -25,7 +25,7 @@
 ```js
     let bar = {
         myName : "极客邦",
-    test1 : 1
+        test1 : 1
     }
     function foo(){
         this.myName = "极客时间"
