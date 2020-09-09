@@ -8,14 +8,14 @@
 
     // 函数声明
     function sum(a, b) {
-    return a + b;
+        return a + b;
     }
 
 - **函数表达式**：在一个表达式中或另一个语法结构中创建的函数。下面这个函数是在赋值表达式 = 右侧创建的：
 
     // 函数表达式
     let sum = function(a, b) {
-    return a + b;
+        return a + b;
     };
 
 
@@ -38,8 +38,8 @@
 
     sayHi("John"); // Hello, John
 
-    function sayHi(name) {
-    alert( `Hello, ${name}` );
+        function sayHi(name) {
+        alert( `Hello, ${name}` );
     }
 
 函数声明 sayHi 是在 JavaScript 准备运行脚本时被创建的，在这个脚本的任何位置都可见。

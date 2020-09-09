@@ -72,7 +72,7 @@ function testable(target) {
 前面的例子是为类添加一个静态属性，如果想添加实例属性，可以通过目标类的prototype对象操作
 ```js
     function testable(target) {
-    target.prototype.isTestable = true;
+      target.prototype.isTestable = true;
     }
 
     @testable

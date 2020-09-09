@@ -1,12 +1,30 @@
 
+Function.prototype.call1 = function(context, ...arguments) {
+    if(typeof this !== 'function') {
+        throw new TypeError('Error')
+    }
+    var newContext = context || window;
+    newContext.fn = this;
+    var result;
 
-var script = document.createElement('src');
-script.src = 'http://www.baidu.com?callBack=fuc';
+    if(arguments) {
+        result = newContext.fn(...arguments)
+    } else {
+        result = newContext.fn();
+    }
 
-script.type = 'text/javascript';
+    delete newContext.fn;
+    return result;
 
-document.appendChild(script);
-
-function fuc(res) {
-    alert(res);
 }
+
+var obj = {a: 1, b: 2}
+
+function test(pr1,pr2) {
+    console.log('a:', this.a)
+    console.log('b:', this.b)
+    console.log('pr1:', pr1)
+    console.log('pr2:', pr2)
+}
+
+test.call(obj, 11, 22)
