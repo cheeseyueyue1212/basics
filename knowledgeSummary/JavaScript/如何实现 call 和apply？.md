@@ -39,50 +39,17 @@
 
 方案一：
 ```js
-if (!Function.prototype.bind) {
-  Function.prototype.bind = function (oThis) {
-    if (typeof this !== "function") {
-      // closest thing possible to the ECMAScript 5 internal IsCallable function
-      throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+Function.prototype.myBind = function() {
+    var args = arguments || [];
+    var context = args[0];
+    var func = this;
+    var thisArgs = Array.prototype.slice.call(args, 1);
+    var returnFunc = function() {
+      Array.prototype.push.apply(thisArgs, arguments);
+      // 最关键的一步，this是new returnFunc中创建的那个新对象，此时将其传给func函数，其实相当于做了new操作最后一步（执行构造函数）
+      return func.apply(this instanceof func ? this : context, thisArgs);
     }
-
-    var aArgs = Array.prototype.slice.call(arguments, 1), 
-        fToBind = this, 
-        fNOP = function () {},
-        fBound = function () {
-          return fToBind.apply(this instanceof fNOP && oThis
-                                 ? this
-                                 : oThis || window,
-                               aArgs.concat(Array.prototype.slice.call(arguments)));
-        };
-
-    fNOP.prototype = this.prototype;
-    fBound.prototype = new fNOP();
-
-    // fBound.prototype = Object.create(this.prototype) 上两行代码 等于这行
-
-    return fBound;
-  };
-}
-```
-方案二：
-```js
-Function.prototype.mybind = function (context) {
-    if (typeof this !== "function") {
-        throw new Error(this + "is not a function");
-    }
-    var self = this;
-    var args = [...arguments];
-    // for (var i = 1, len = arguments.length; i < len; i++) {
-    //     args.push(arguments[i]);
-    // }
- 
-    var fbound = function () {
-        var bindArgs = Array.prototype.slice.call(arguments);
-        self.apply(this instanceof self ? this : context, args.concat(bindArgs));
-    }
-    fbound.prototype = Object.create(self.prototype);
-    //返回的函数不仅要和 被调函数的函数体相同，也要继承人家的原型链
-    return fbound;
+    returnFunc.prototype = new func()
+    return returnFunc
 }
 ```

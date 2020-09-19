@@ -39,10 +39,10 @@
 > 要改变函数执行上下文中的 this 指向，除了通过函数的 call 方法来实现外，还可以通过对象调用的方式
 ```js
     var myObj = {
-    name : "极客时间", 
-    showThis: function(){
-        console.log(this)
-    }
+        name : "极客时间", 
+        showThis: function(){
+            console.log(this)
+        }
     }
     myObj.showThis()  // {name: "极客时间", showThis: ƒ}
 ```
@@ -80,12 +80,12 @@
 ### 嵌套函数中的 this 不会从外层函数中继承
 ```js
     var myObj = {
-    name : "极客时间", 
-    showThis: function(){
-        console.log(this) 
-        function bar(){console.log(this)}
-        bar()
-    }
+        name : "极客时间", 
+        showThis: function(){
+            console.log(this) 
+            function bar(){console.log(this)}
+            bar()
+        }
     }
     myObj.showThis()
     //函数 bar 中的 this 指向的是全局 window 对象，
@@ -114,15 +114,15 @@
 本质是把 this 体系转换为了作用域的体系 。也可以使用 ES6 中的箭头函数来解决这个问题
 ```js
     var myObj = {
-    name : "极客时间", 
-    showThis: function(){
-        console.log(this) // {name: "极客时间", showThis: ƒ}
-        var bar = ()=>{
-            this.name = "极客邦"
-            console.log(this)  //  {name: "极客邦", showThis: ƒ}
+        name : "极客时间", 
+        showThis: function(){
+            console.log(this) // {name: "极客时间", showThis: ƒ}
+            var bar = ()=>{
+                this.name = "极客邦"
+                console.log(this)  //  {name: "极客邦", showThis: ƒ}
+            }
+            bar()
         }
-        bar()
-    }
     }
     myObj.showThis()  
     console.log(myObj.name)   // 极客邦

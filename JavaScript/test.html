@@ -5,55 +5,31 @@
 <title>demo</title>
 </head>
 <style>
-  .myDiv {
-    border: 1px solid red;
-    width: 200px;
-    height: 2000px;
-  }
+ .myDiv{
+     width: 300px;
+     height: 300px;
+     border: 1px solid red;
+}
+.test {
+  width: 30%;       
+  height: 100%;
+  background-color: aquamarine;
+}
+
 </style>
 <body>
-  <div class="myDiv">111</div>
+  <div class="myDiv">
+    <div class="test">
+      lalala
+    </div>
+  </div>
 
 
 </body>
 <script>
 
-// function setCookie(name, value, expires, path, domain, secure) {
-// 	var cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-// 	if (expires instanceof Date) {
-// 		cookieText += '; expires=' + expires;
-// 	}
-// 	if (path) {
-// 		cookieText += '; expires=' + expires;
-// 	}
-// 	if (domain) {
-// 		cookieText += '; domain=' + domain;
-// 	}
-// 	if (secure) {
-// 		cookieText += '; secure';
-// 	}
-// 	document.cookie = cookieText;
-// }
 
-var mycookie="cheese=18; expires=; domain=domain1; secure"
 
-//获取cookie
-function getCookie(name) {
-	var cookieName = encodeURIComponent(name) + '=';
-	var cookieStart = mycookie.indexOf(cookieName);
-	var cookieValue = null;
-	if (cookieStart > -1) {
-		var cookieEnd = mycookie.indexOf(';', cookieStart);
-		if (cookieEnd == -1) {
-			cookieEnd = mycookie.length;
-		}
-		cookieValue = decodeURIComponent(mycookie.substring(cookieStart + cookieName.length, cookieEnd));
-	}
-	return cookieValue;
-}
-
-// setCookie('cheese', '18', '', 'path1', 'domain1', 'secure1')
-getCookie('cheese')
 </script>
 
 </html>

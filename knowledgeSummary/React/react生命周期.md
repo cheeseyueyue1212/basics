@@ -137,12 +137,12 @@ static getDerivedStateFromProps(nextProps, prevState) .//返回一个对象 和�
 新的代码
 ```js
      static getDerivedStateFromPorps (nextProps,prevState){
-     //2
-     if(nextProps.tab!=prevState.tab){
-          return {
-               tab:nextProps.tab
-          };
-     }
+          //2
+          if(nextProps.tab!=prevState.tab){
+               return {
+                    tab:nextProps.tab
+               };
+          }
           return null;
      }
 
