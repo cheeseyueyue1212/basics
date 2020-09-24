@@ -8,7 +8,7 @@
 对vuex源码上如何实现只能mutation更改，而不能直接更改
 vuex中如何在层层都可以引用$store
 vuex和redux的差别
-笔试题6页
+
 css优先级关系
 eventloop的先后顺序(node内)
 node中的垃圾收集机制
@@ -53,15 +53,12 @@ css对flex的理解
 浏览器的架构，bom，dom
 
 
-框架
-
 vue的生命周期
 组件A下有子组件B、C，那么3个组件生命周期的调用顺序，同级组件mounted触发一定是先调用先call吗？同步还是异步？
 vue的基本原理
 vue eventbus的实现
 vue父子组件的通信
 vuex的使用
-基础知识
 
 对https的理解,对称、非对称加密在哪部使用
 css布局 各种定位的方式
@@ -76,8 +73,6 @@ cookie 种在子域下能否携带发送到服务端(SSO登录)
 axios与xhr的区别，如何用promise包装xhr
 讲讲项目中的难点
 
-框架
-
 vue的生命周期
 vue双向绑定的原理
 vue父子组件通信的方式
@@ -85,7 +80,6 @@ vue eventbus的原理
 对vuex的理解
 谈谈对vue和react对比，并从中能学到什么
 vue中可以对对象进行数据监听，如果对于数组中的某个元素能否监听，是如何做到的
-基础知识
 
 http的头部有什么字段，简要描述(缓存，content-type，cookie等等)
 cookie跨域服务端需要如何适配(CORS头)
@@ -95,21 +89,16 @@ cookie跨域服务端需要如何适配(CORS头)
 对http2有哪些了解
 对canvas有哪些性能上的优化
 对settimeout和对setinterval的理解（涉及代码题倒计时函数，eventloop的考点）计时是否准确？如何实现较为准确的计时？
-对一个短时间并发高的场景需要如何处理（后端设计）(开始答题获取试卷的场景)
-写代码
 
 写一个倒计时函数
 写一个函数，给定一棵树，输出这棵树的深度
 写一个函数，给定一个url和最大深度maxdeep，输出抓取当前url及其子链接深度范围内的所有图片
 写一个函数，给定nodes=[]，每一个节点拥有id,name,parentid，输出一个属性列表的展示(涉及dom操作)
-抖音
 
-框架
 
 vue数据绑定的实现原理
 vue computed具体在什么阶段进行的依赖收集，具体的过程详细描述
 vuex和redux的差别
-基础知识
 
 跨域的解决办法
 原型链的理解，写一个原型继承
@@ -121,12 +110,9 @@ ES module与cjs的区别
 Tree shaking的实现原理
 给定一个sum 检验一棵树中，是否存在一条路径和为sum，输出该路径
 
-框架
-
 对vuex源码上如何实现只能mutation更改，而不能直接更改
 vuex中如何在层层都可以引用$store
 vuex和redux的差别
-基础知识
 
 css优先级关系
 eventloop的先后顺序(node内)
