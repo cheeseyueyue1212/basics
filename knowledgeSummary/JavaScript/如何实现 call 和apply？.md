@@ -39,17 +39,53 @@
 
 方案一：
 ```js
-Function.prototype.myBind = function() {
-    var args = arguments || [];
-    var context = args[0];
-    var func = this;
-    var thisArgs = Array.prototype.slice.call(args, 1);
-    var returnFunc = function() {
-      Array.prototype.push.apply(thisArgs, arguments);
-      // 最关键的一步，this是new returnFunc中创建的那个新对象，此时将其传给func函数，其实相当于做了new操作最后一步（执行构造函数）
-      return func.apply(this instanceof func ? this : context, thisArgs);
+var value = 2;
+
+var foo = {
+    value: 1
+};
+
+function bar(name, age) {
+    this.habit = 'shopping';
+    console.log(this.value);
+    console.log(name);
+    console.log(age);
+}
+
+bar.prototype.friend = 'kevin';
+
+var bindFoo = bar.bind(foo, 'daisy');
+
+var obj = new bindFoo('18');
+// undefined
+// daisy
+// 18
+console.log(obj.habit);
+console.log(obj.friend);
+// shopping
+// kevin
+
+
+Function.prototype.bind2 = function (context) {
+
+    if (typeof this !== "function") {
+      throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
     }
-    returnFunc.prototype = new func()
-    return returnFunc
+
+    var self = this;
+    var args = Array.prototype.slice.call(arguments, 1);
+
+    var fNOP = function () {};
+
+    var fBound = function () {
+        var bindArgs = Array.prototype.slice.call(arguments);
+        self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
+    }
+
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+    return fBound;
 }
 ```
+
+[参考文档](https://www.jianshu.com/p/1929f3a01b43)

@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>旋转</title>
-</head>
-<style></style>
-
-<body>
-    <div class="wrapper">
-        <div class="z">
-            zou
-        </div>
-    </div>
-</body>
-
-<script>
 function sum(root) {
     let que = [],
         newque = [],
@@ -29,12 +11,6 @@ function sum(root) {
         let sum = 0;
         que.forEach(function (item) {
             sum += item.value;
-            if(item.l !== null) {
-              newque.push(node.l);
-            }
-            if(item.r !== null) {
-              newque.push(item.r);
-            }
         })
         result.push(sum);
         while (que.length != 0) {
@@ -53,8 +29,30 @@ function sum(root) {
 
     return result;
 }
-
-
-
-
-</script>
+let r = {
+    l: {
+        l: {
+            value: 4,
+            l: null,
+            r: null
+        },
+        r: {
+            value: 5,
+            l: null,
+            r: null
+        },
+        value: 2
+    },
+    r: {
+        l: {
+            value: 6,
+            l: null,
+            r: null
+        },
+        r: null,
+        value: 3
+    },
+    value: 1
+};
+let t = sum(r);
+console.log(t); //[1,5,15]
