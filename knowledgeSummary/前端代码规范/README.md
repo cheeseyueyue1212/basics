@@ -1,4 +1,7 @@
 # 前端开发规范参考文档
+* [基本原则](#基本原则)
+    * [1. 结构、样式、行为分离](#1-结构、样式、行为分离)
+
 
 ## 基本原则
 ### 1. 结构、样式、行为分离
@@ -46,4 +49,43 @@ const obj = {
   bar() {
   }
 }
+```
+### 5. 不用别名引用 this，使用箭头函数，直接使用，更加简洁
+
+```js
+// bad
+function foo() {
+  const self = this
+  return function () {
+    console.log(self)
+  }
+}
+
+// bad
+function foo() {
+  const that = this
+  return function () {
+    console.log(that)
+  }
+}
+
+// good
+function foo() {
+  return () => {
+    console.log(this)
+  }
+}
+```
+
+### 6. 多次使用的命名空间，使用对象解构替换，简洁易读
+```js
+// bad
+const x = obj.x
+const y = obj.y
+const a = arr[0]
+const b = arr[1]
+
+// good
+const { x, y } = obj
+const [a, b] = arr
 ```
