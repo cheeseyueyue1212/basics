@@ -77,9 +77,13 @@ var F = function () {}
 Object.prototype.a = function () {}
 Function.prototype.b = function () {}
 
-var f = new F()
+var f = new F()  
 // 请问f有方法a  方法b吗
 ```
+
+f.__proto__ === F.prototype
+F.prototype.__proto__ === Object.prototype
+
 f的__proto__指向F.prototype，F.prototype.__proto__指向Object.prototype，所以f 可以取到a方法， 由于f的原型链上没经过Function.prototype，所以取不到b方法。
 
 由于构造函数F是由Function new出来的，所以F.__proto__指向Function.prototype，所以F函数可以取到b方法。

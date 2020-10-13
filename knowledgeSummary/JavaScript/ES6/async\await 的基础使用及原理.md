@@ -56,7 +56,7 @@ Generator函数:generator（生成器）是ES6标准引入的新的数据类型�
 ```js
 function* Generator() {
             yield '11111111';
-            yield '22222222'
+            yield '22222222';
             return '3333333';
         }
 

@@ -2,59 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>旋转</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> H5 HistoryDemo </title>
 </head>
-<style></style>
 
 <body>
-    <div class="wrapper">
-        <div class="z">
-            zou
-        </div>
-    </div>
+
+	<ul>
+		<li><a onclick="home()">首页</a></li>
+		<li><a onclick="about()">关于</a></li>
+		<li><a onclick="mine()">我的</a></li>
+	</ul>
+
+	<div id="showContent" style="height:250px;width:200px;background:green">home</div>
+
+	<script>
+
+	function sleep(time) {
+		return new Promise((resolve, reject) => {
+			setTimeout(resolve, time)
+		})
+	}
+
+	async function test() {
+		await sleep(1000);
+		//...
+	}	
+
+
+	</script>
 </body>
 
-<script>
-function sum(root) {
-    let que = [],
-        newque = [],
-        result = [];
-    if (root !== null) {
-        que.push(root);
-    } else {
-        return [0];
-    }
-    do {
-        let sum = 0;
-        que.forEach(function (item) {
-            sum += item.value;
-            if(item.l !== null) {
-              newque.push(node.l);
-            }
-            if(item.r !== null) {
-              newque.push(item.r);
-            }
-        })
-        result.push(sum);
-        while (que.length != 0) {
-            let node = que.shift();
-            if (node.l !== null) {
-                newque.push(node.l);
-            }
-            if (node.r !== null) {
-                newque.push(node.r);
-            }
-        }
-        let temp = newque;
-        newque = que;
-        que = temp;
-    } while (que.length != 0);
-
-    return result;
-}
-
-
-
-
-</script>
+</html>

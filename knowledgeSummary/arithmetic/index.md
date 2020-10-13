@@ -174,10 +174,8 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 - 浏览器缓存
 - react 性能优化
 - vue 如何做权限检验
-- 讲讲 http2.0
 - 你是如何做性能优化的
 - 单元测试如何测试，代码覆盖率如何
-- react 生命周期
 - 说说 react 状态逻辑复用问题
 - react fiber 节点（不会，没研究过）
 - Koa 中间件原理
@@ -208,14 +206,12 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 - 讲讲 react fiber 节点
 
 ## one
-- 讲讲 react 生命周期
-- 讲讲 ts 中 type 和 interface 的区别
+- 讲讲 ts 中 type 和 interface 的区别   
 - 说说 http
 - 说说 vue 双向绑定
 - diff 算法
 - 虚拟 dom
 - http 缓存
-- 讲讲 http2.0
 - 说说状态逻辑复用问题
 - 介绍下项目的亮点
 - 介绍下 es6 新增了哪些特性
@@ -224,22 +220,16 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 - 为什么 vue 或者 react 要求 key 值唯一
 
 ## two
-- 平时怎么学习的
 - MVVM 实现
 - data 里面为什么是函数
 - UDP TCP 区别
 - vuex 应用场景
 - 说说 XSS 攻击
 - 说说 vue 的模板编译
-- 说说你项目的亮点
 - new 原理实现
-- 状态码 403 404 503 304 说说
-- diff 算法
-- 虚拟 dom
 - 说说事件循环
 - react16 的重大更新
 - 为什么废除三个 react 生命周期的 api
-- 讲讲 fiber
 - 浏览器缓存
 - nextTick 原理
 - 说说你的 vuex 持久化插件
@@ -262,8 +252,6 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 - call bind new 实现原理
 - vue 双向绑定原理
 - LRU 算法
-- http2.0 的有哪些内容
-- http 缓存
 - rem vw 区别
 - 移动 1px 问题
 - 函数柯里化

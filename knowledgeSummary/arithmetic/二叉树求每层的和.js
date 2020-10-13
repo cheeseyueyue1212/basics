@@ -11,24 +11,23 @@ function sum(root) {
         let sum = 0;
         que.forEach(function (item) {
             sum += item.value;
+            if (item.l !== null) {
+                newque.push(item.l);
+            }
+            if (item.r !== null) {
+                newque.push(item.r);
+            }
         })
         result.push(sum);
-        while (que.length != 0) {
-            let node = que.shift();
-            if (node.l !== null) {
-                newque.push(node.l);
-            }
-            if (node.r !== null) {
-                newque.push(node.r);
-            }
-        }
+
         let temp = newque;
-        newque = que;
+        newque = [];
         que = temp;
     } while (que.length != 0);
 
     return result;
 }
+
 let r = {
     l: {
         l: {
