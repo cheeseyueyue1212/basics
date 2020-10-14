@@ -11,6 +11,7 @@
     * [5. 不用别名引用 this，使用箭头函数，直接使用，更加简洁](#5-不用别名引用使用箭头函数直接使用更加简洁)
     * [6. 多次使用的命名空间，使用对象解构替换，简洁易读](#6-多次使用的命名空间使用对象解构替换简洁易读)
     * [...]()
+* [三. 浏览器环境](#三-浏览器环境)
 ## 一. 基本原则
 ### 1. 结构、样式、行为分离
 尽量确保文档和模板只包含 HTML 结构，样式都放到样式表里，行为都放到脚本里。
@@ -96,6 +97,30 @@ const b = arr[1]
 // good
 const { x, y } = obj
 const [a, b] = arr
+```
+
+```js
+// good
+function getFullName(user) {
+  const { firstName, lastName } = user;
+  return `${firstName} ${lastName}`;
+}
+
+// best
+function getFullName({ firstName, lastName }) {
+  return `${firstName} ${lastName}`;
+}
+```
+
+```js
+// good
+function processInput(input) {
+  // 处理代码...
+  return { left, right, top, bottom };
+}
+
+// 调用者只选择他们需要的数据。
+const { left, top } = processInput(input);
 ```
 
 ### 7. 避免使用 switch
@@ -230,6 +255,15 @@ function handleThings(opts = {}) {
 ## 三：浏览器环境
 ### 1. 尽量减少 DOM 操作
 > 使用变量缓存 DOM 对象
+
+### 15. 对于对迭代器的映射，使用 Array.from 替代展开方法 ... ， 因为它避免了创建中间数组。
+```js
+// bad
+const baz = [...foo].map(bar);
+
+// good
+const baz = Array.from(foo, bar);
+```
 
 ```js
 // bad
