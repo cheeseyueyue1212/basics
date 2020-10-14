@@ -252,7 +252,7 @@ function handleThings(opts = {}) {
 [1, 2, 3].map(x => x * x)
 ```
 
-## 三：浏览器环境
+## 三. 浏览器环境
 ### 1. 尽量减少 DOM 操作
 > 使用变量缓存 DOM 对象
 
