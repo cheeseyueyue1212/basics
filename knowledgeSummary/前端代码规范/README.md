@@ -265,17 +265,18 @@ const bar = !!c;
 const baz = !c;
 ```
 
-## 三. 浏览器环境
-### 1. 尽量减少 DOM 操作
-> 使用变量缓存 DOM 对象
-
-### 15. 对于对迭代器的映射，使用 Array.from 替代展开方法 ... ， 因为它避免了创建中间数组。
+### 16. 对于对迭代器的映射，使用 Array.from 替代展开方法 ... ， 因为它避免了创建中间数组。
 ```js
 // bad
 const baz = [...foo].map(bar);
 
 // good
 const baz = Array.from(foo, bar);
+
+## 三. 浏览器环境
+### 1. 尽量减少 DOM 操作
+> 使用变量缓存 DOM 对象
+
 ```
 
 ```js
