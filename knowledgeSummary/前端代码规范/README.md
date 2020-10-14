@@ -252,6 +252,19 @@ function handleThings(opts = {}) {
 [1, 2, 3].map(x => x * x)
 ```
 
+### 15. 避免不必要的三目表达式
+```js
+// bad
+const foo = a ? a : b;
+const bar = c ? true : false;
+const baz = c ? false : true;
+
+// good
+const foo = a || b;
+const bar = !!c;
+const baz = !c;
+```
+
 ## 三. 浏览器环境
 ### 1. 尽量减少 DOM 操作
 > 使用变量缓存 DOM 对象
