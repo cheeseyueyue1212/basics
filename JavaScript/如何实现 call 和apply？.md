@@ -66,20 +66,18 @@ console.log(obj.friend);
 // kevin
 
 
-Function.prototype.bind2 = function (context) {
+Function.prototype.bind2 = function (context, ...args) {
 
     if (typeof this !== "function") {
-      throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+        throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
     }
 
-    var self = this;
-    var args = Array.prototype.slice.call(arguments, 1);
+    var fn = this;
 
-    var fNOP = function () {};
+    var fNOP = function () { };
 
-    var fBound = function () {
-        var bindArgs = Array.prototype.slice.call(arguments);
-        self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
+    var fBound = function (...bindArgs) {
+        fn.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
     }
 
     fNOP.prototype = this.prototype;

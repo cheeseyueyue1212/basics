@@ -1,92 +1,50 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+// Function.prototype.call1 = function(context, ...args) {
+//   if(typeof this !== 'function') {
+//     throw Error('not a function')
+//   }
 
-// createStore的时候传入thunk中间件
-const store = createStore(rootReducer, applyMiddleware(thunk));
+//   let newContext = context || window;
+//   newContext.fn = this;
 
-// 发起网络请求的方法
-function fetchSecretSauce() {
-  return fetch('https://www.baidu.com/s?wd=Secret%20Sauce');
-}
+//   var result;
+//   if(args) {
+//     result = newContext.fn(...args)
+//   } else {
+//     result = newContext.fn();
+//   }
+//   delete newContext.fn;
+//   return result;
+// }
 
-// 下面两个是普通的action
-function makeASandwich(forPerson, secretSauce) {
-  return {
-    type: 'MAKE_SANDWICH',
-    forPerson,
-    secretSauce,
-  };
-}
+Function.prototype.bind2 = function (context) {
 
-function apologize(fromPerson, toPerson, error) {
-  return {
-    type: 'APOLOGIZE',
-    fromPerson,
-    toPerson,
-    error,
-  };
-}
-
-// 这是一个异步action，先请求网络，成功就makeASandwich，失败就apologize
-function makeASandwichWithSecretSauce(forPerson) {
-  return function (dispatch) {
-    return fetchSecretSauce().then(
-      (sauce) => dispatch(makeASandwich(forPerson, sauce)),
-      (error) => dispatch(apologize('The Sandwich Shop', forPerson, error)),
-    );
-  };
-}
-
-// 最终dispatch的是异步action makeASandwichWithSecretSauce
-store.dispatch(makeASandwichWithSecretSauce('Me'));
-
-
-window.addEventListener('scroll', fangdou(handler, 1000))
-
-function fangdou(fn,delay) {
-  var timer = null;
-  return function() {
-    if(timer !== null) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(fn, delay);
+  if (typeof this !== "function") {
+    throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
   }
-}
 
+  var self = this;
+  var args = Array.prototype.slice.call(arguments, 1);
 
-function handler() {
-  console.log('滑动了')
-}
+  var fNOP = function () {};
 
-
-function jieliu(fn, delay) {
-  var timer = null;
-  return function() {
-    var context = this;
-    var args = arguments;
-    if(!timer) {
-      timer = setTimeout(function() {
-        fn.applay(context, args);
-      },delay)
-    }
+  var fBound = function () {
+      var bindArgs = Array.prototype.slice.call(arguments);
+      self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
   }
+
+  fNOP.prototype = this.prototype;
+  fBound.prototype = new fNOP();
+  return fBound;
 }
 
-function jieliu(fn,delay) {
-  var timer = null;
-  var startTime = Date.now();
-  return function() {
-    var curTimer = Date.now();
-    var context = this;
-    var args = arguments;
-    var remaining = delay - (curTimer-startTime);
-    clearTimeout(timer);
-    if(remaining <= 0) {
-      fn.applay(context, args);
-      startTime = Date.now();
-    } else {
-      timer = setTimeout(fn, remaining);
-    }
-  }
+function test(...args) {
+  alert(this.cheese)
+  alert('arguments:', arguments)
 }
+
+var obj = {
+  cheese: 111
+}
+
+var a = test.bind2(obj, 123, 222)
+a(333)

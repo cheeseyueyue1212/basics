@@ -19,19 +19,25 @@
 	<div id="showContent" style="height:250px;width:200px;background:green">home</div>
 
 	<script>
+function GetUrlParam(paraName) {
+	var url = document.location.toString();
+	url = "https://blog.csdn.net/weixin_43865196/article/details/107100623?cheese=1&&br=2"
+    var arrObj = url.split("?");
+    if (arrObj.length > 1) {
+        var arrPara = arrObj[1].split("&&");
+        var arr;
+        for (var i = 0; i < arrPara.length; i++) {
+            arr = arrPara[i].split("=");
 
-	function sleep(time) {
-		return new Promise((resolve, reject) => {
-			setTimeout(resolve, time)
-		})
-	}
-
-	async function test() {
-		await sleep(1000);
-		//...
-	}	
-
-
+            if (arr != null && arr[0] == paraName) {
+                return arr[1];
+            }
+        }
+        return "";
+    } else {
+        return "";
+    }
+}
 	</script>
 </body>
 

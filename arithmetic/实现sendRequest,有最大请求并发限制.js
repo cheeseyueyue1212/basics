@@ -9,7 +9,7 @@ function sendRequest(urls, limit, callback) {
                 setTimeout(() => {
                     console.log(`当前发送：${url}`);
                     resolve(url);
-                }, 10)
+                }, 1000)
             })
                 .finally(() => {
                     if (urls.length > 0) {
