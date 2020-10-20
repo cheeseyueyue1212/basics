@@ -235,7 +235,7 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 - 说说你的 vuex 持久化插件
 
 ## one
-- 内联元素与块级元素
+- 内联元素与块级元素 table/div/p/ul/form  span/a/img/input
 - 数组 api 介绍
 - dom 操作有哪些 api
 - 数组去重有哪几种方式
@@ -254,7 +254,6 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 - LRU 算法
 - rem vw 区别
 - 移动 1px 问题
-- 函数柯里化
 - diff 算法
 - 虚拟 dom
 - nextTick 原理

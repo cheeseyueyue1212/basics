@@ -1,1 +1,2 @@
 React16版本更新的新特性: https://blog.csdn.net/mapbar_front/article/details/80187123
+生命周期: https://blog.csdn.net/htsclch/article/details/90786322?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight

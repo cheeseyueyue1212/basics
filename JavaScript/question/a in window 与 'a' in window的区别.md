@@ -4,13 +4,13 @@
    // 例子如下   
    window.a = 1;
  
-    a in window;   //返回false
+    a in window;   //返回false  ??? 控制台打印 为 true
    'a' in window;  //返回true
  
  
     //这个貌似是正常的，和我们理解的一样
     var xx = 1;
-    console.log(xx in window);   //false
+    console.log(xx in window);   //false  ??? 控制台打印 为 true
     console.log('xx' in window); //true 
  
  
