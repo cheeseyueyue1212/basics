@@ -249,7 +249,7 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 ## two
 - 什么是暂时性死区？
 - 块级作用域和函数作用域
-- call bind new 实现原理
+- call bind new 实现原理    
 - vue 双向绑定原理
 - LRU 算法
 - rem vw 区别
@@ -257,29 +257,22 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 - diff 算法
 - 虚拟 dom
 - nextTick 原理
-- 事件循环
 - 闭包
 - 如何解决移动端 click300ms 延迟？
 - vue 有哪些全局组件
 - 移动端如何完成拖拽功能？
-- 防抖和节流的区别
 - 一道逻辑题：有 5L 的桶和 3L 的桶，如何拿到 4L 的水
 
 ## three
-- 防抖和节流的使用场景，举例说明
 - 居中的几种方案
-- 事件循环
-- 移动 1px
 - setTimeout 与 rAF
 - flex:1
 - 介绍下你写的库
 - 发布订阅和观察者的区别
 - 单例模式
-- 发布订阅和观察者的区别
 - JSONP 实现原理
 - 移动端点击延迟怎么处理
 - git flow 工作流介绍
-- 两道场景题-问的很深，很久
 - 怎么做性能优化
 - 性能监控如何做
 - 跨域解决方案
@@ -297,7 +290,31 @@ http keep—alive都解决了哪些问题 keep-alive是从c - nginx建立的还�
 - extend 原理
 - Object.create 原理
 - 虚拟列表原理
-- 浏览器缓存原理
 - 什么 csrf 攻击
 - csrftoken 怎么获取，存到哪里
 - 并发调度手写题
+
+## teng gao
+- 实现一个 array 多维数组，把他拍平。遍历以及 reduce 的实现方法。
+- Angular 预编译是怎么做的？@Component 中的元数据是如何被使用的？
+- Object.defineproperty 和 Object.freeze，哪个是深层的冻结？
+- Http 拦截器的原理是什么？如何实现？
+- 截流和防抖的区别，说说如何实现一个防抖函数。
+- Jwt 鉴权的整个过程，前端，后段。
+- 如何判断一个类型是否为其他类的子类？如果让你实现 instanceof ，你会如何实现？
+- 路由守卫的原理，如何实现？
+- 斐波那契在递归时，如何优化性能？
+- Node 中超大文件的读取，写入，移动是怎么做的？
+- 最近在看什么有趣的东西？可以介绍一下吗？(回答 decorator)
+- Eslint 的原理，如何检测出不符合规则的代码？
+
+- Rx中的 swichMap 是如何实现的？
+- 看你最近做的项目，线上加载的 js 很多超过 200k 的，你打算怎么优化？
+- 如果让你实现一个全景空间(WebVr)你有哪些思路？
+- 谈谈对 scrum 的认识。
+
+- 团队leader要承担的事情
+- 构建流程/cli/工作流/git 的工作
+- vue响应式实现$nexttick实现
+- react setState 实现原理
+- http2.0的优势
