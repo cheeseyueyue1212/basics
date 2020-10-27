@@ -61,5 +61,20 @@
 </body>
 
 <script>
+getTargetIndexs([3,4,5,7,9], 10)
 
+function getTargetIndexs(arr, sum) {
+    let obj = {};
+    let res;
+    let arr1 = []
+    arr.map((item, i) => {
+        res = sum - item
+        if(obj[res] !== undefined) {
+            arr1.push([obj[res], i])
+        }
+
+        obj[item] = i;
+    })
+    console.log(arr1)
+}
 </script>
