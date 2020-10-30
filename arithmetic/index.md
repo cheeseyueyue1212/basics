@@ -3,7 +3,7 @@
 2. [面试题](https://blog.csdn.net/m0_37828249/article/details/105215326)
 3. [面试题](https://blog.csdn.net/m0_37828249/article/details/104976153)
 4. [6次面试题](https://www.kanzhun.com/jiaocheng/451973.html)(https://www.cnblogs.com/hanxuming/p/10642074.html)
-5. []()
+5. [很全面的总结](https://juejin.im/post/6844904200917221389#heading-85)
 
 对vuex源码上如何实现只能mutation更改，而不能直接更改
 vuex中如何在层层都可以引用$store

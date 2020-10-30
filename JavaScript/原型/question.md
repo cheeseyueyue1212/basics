@@ -122,3 +122,13 @@ let obj = {}
 > Object是对象的构造函数，那么它也是一个函数，当然它的__proto__也是指向Function.prototype
 
 *******************************************************************************************************************************************************************************************
+
+
+var a = new Preson()
+
+a.__proto__== Person.prototype
+a.__proto.__proto == Function.prototype
+a.__proto.__proto__.__proto__ === Object.prototype
+a.__proto__.__proto__.__proto__.__proto__ == null
+
+Function.__proto__ === Function.prototype

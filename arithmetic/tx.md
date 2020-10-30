@@ -119,7 +119,33 @@ var b = '23456789123456789';
 console.log(addBigInt(a, b));
 //'146913578246913578'
 
+```js
+function addBigInt(str1, str2) {
+    var arr1 = str1.length >= str2.length ? str1.split('').reverse() : str2.split('').reverse();
+    var arr2 = str1.length < str2.length ? str1.split('').reverse() : str2.split('').reverse();
+    arr1.forEach((item, i) => arr1[i] = Number(item) );
+    arr2.forEach((item, i) => arr2[i] = Number(item) );
 
+    var res = [];
+    var pre = 0;
+    for(var i = 0; i < arr1.length; i++) {
+        var num1 = arr1[i] ? arr1[i] : 0
+        var num2 = arr2[i] ? arr2[i] : 0
+        var val = (num1 + num2) + pre;
+
+        var item = val > 9 ? Number(val.toString().slice(1)) : val;
+
+        res.push(item);
+        pre = val > 9 ? 1 :0
+        
+    }
+
+    return res.reverse().join('');
+}
+var a ='11111';
+var b = '1189';
+console.log(addBigInt(a, b));
+```
 
 # 4. 求数组中两个元素相加为某个值的两个坐标（要求O(n)复杂度）
 ```JS
@@ -141,7 +167,7 @@ function getTargetIndexs(arr, sum) {
 }
 ```
 
-# less
+# less: 函数调用，传参， 颜色， 计算， 倒入， 嵌套
 
 # BFC
 
