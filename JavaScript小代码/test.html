@@ -1,58 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title> H5 HistoryDemo </title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
-
-		html,
-		body {
-			width: 100%;
-			height: 100%;
-		}
-
-		#div1 {
-			width: 50px;
-			height: 50px;
-			background: cyan;
-			position: absolute;
-
-			position: fixed;
-			align-items: center;
-			justify-content: center;
-
-
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			/* margin-left: -100px; */
-			/* margin-top: -100px; */
-			transform: translate(-50%, -50%);
-
-
-
-		}
-	</style>
-</head>
-
 <body>
-
-	<div id="div1"></div>
-
-	<script>
-		Object.myInstanceof = function(obj2) {
-			return obj.__proto__ === obj2.protoType
-		}
-
-		obj.myInstanceof
-	</script>
-</body>
-
-</html>
+  <div id="info">
+    <div class="box-1" onclick="box1()">
+      最外层
+      <div class="box-2" onclick="box2()">
+        第二层
+        <div class="box-3" onclick="box3()">
+          第三层
+          <div class="box-4" onclick="bubbles()">最底</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function bubbles(){
+      console.log("最底层盒子被点击了")
+    }
+   
+    function box1(){
+      console.log("最外层盒子被点击了");
+    }
+   
+    function box2(){
+      console.log("第二个盒子被点击了");
+    }
+   
+    function box3(){
+      console.log("第三个盒子被点击了");
+    }
+  </script>
+</body>  
