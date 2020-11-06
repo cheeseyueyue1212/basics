@@ -132,3 +132,14 @@ a.__proto.__proto__.__proto__ === Object.prototype
 a.__proto__.__proto__.__proto__.__proto__ == null
 
 Function.__proto__ === Function.prototype
+
+
+```js
+		var a = function () { this.b = 3; }
+		var c = new a();
+		a.prototype.b = 9;
+		var b = 7;
+		a();
+		console.log(b);
+		console.log(c.b); 
+```

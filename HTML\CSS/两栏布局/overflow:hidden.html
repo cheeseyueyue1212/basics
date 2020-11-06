@@ -13,23 +13,25 @@
       background: red;
     }
     .left {
-      width: 100px;
       height: 100px;
       background: pink;
-      float:left;
+      
+      overflow: hidden;
     }
     .right{
       height: 110px;
       background: #ccc;
       /* overflow: hidden; 创建BFC */
-      overflow: hidden;
+      float: right;
+      width: 100px;
     }
   </style>
 </head>
 <body>
   <section id="layout">
-    <div class="left"></div>
+    
     <div class="right"></div>
+    <div class="left"></div>
   </section>
 </body>
 </body>

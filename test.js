@@ -1,50 +1,33 @@
-// Function.prototype.call1 = function(context, ...args) {
-//   if(typeof this !== 'function') {
-//     throw Error('not a function')
-//   }
+var num = 10 //11
+const obj = {num: 20} //60
 
-//   let newContext = context || window;
-//   newContext.fn = this;
-
-//   var result;
-//   if(args) {
-//     result = newContext.fn(...args)
-//   } else {
-//     result = newContext.fn();
-//   }
-//   delete newContext.fn;
-//   return result;
-// }
-
-Function.prototype.bind2 = function (context) {
-
-  if (typeof this !== "function") {
-    throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+obj.fn = (function (num) {
+  this.num = num * 3
+  num++
+  return function (n) {
+    this.num += n
+    num++
+    console.log(num)
   }
+})(obj.num)
 
-  var self = this;
-  var args = Array.prototype.slice.call(arguments, 1);
+var fn = obj.fn
 
-  var fNOP = function () {};
+fn(5) //22
+obj.fn(10) //23
+console.log(num, obj.num) //65 30
 
-  var fBound = function () {
-      var bindArgs = Array.prototype.slice.call(arguments);
-      self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
-  }
 
-  fNOP.prototype = this.prototype;
-  fBound.prototype = new fNOP();
-  return fBound;
+
+
+obj.fn = function(n) {
+  this.num +=n
+  num++
+  comsole.log(num)
 }
 
-function test(...args) {
-  alert(this.cheese)
-  alert('arguments:', arguments)
+fn = function(n) {
+  this.num +=n
+  num++
+  comsole.log(num)
 }
-
-var obj = {
-  cheese: 111
-}
-
-var a = test.bind2(obj, 123, 222)
-a(333)
