@@ -12,42 +12,26 @@
 		</div>
 	</div>
 	<script>
+		let arr = [2, 4, 6, 8, 10];
+		let ar = arr.reduce((pre, curr, i, arr) => {
+			console.log('i:', i)
+			// return pre.concat(curr * 2)
+		})
+		console.log(ar)
 
-		var num = 10  //60 65
-		const obj = { num: 20 } //30
 
-		obj.fn = (function (num) {
-			this.num = num * 3
-			num++ //21 22 23
-			return function (n) {
-				this.num += n
-				num++
-				console.log(num)
+		function reduce(arr, pre, callBackFn) {
+			if(!Array.isArray(arr) || !arr.length || typeof callBackFn !== 'function') {
+				return []
+			} else {
+				let hasPre = pre !== undefined;
+				let value = hasPre ? pre: arr[0];
+
+				for(var i = hasPre ? 0 : 1; i < arr.length; i++) {
+					value = callBackFn(value, arr[i], i, arr);
+				}
+				return value;
 			}
-		})(obj.num)
-
-		var fn = obj.fn
-
-		fn(5) //22
-		obj.fn(10) //23
-		console.log(num, obj.num) //65 30
-
-
-
-		var x = 30;
-		function test() {
-			console.log(x);
-			var x = 10;
-			console.log(x);
-			x = 20;
-			function x() { }
-			console.log(x);
 		}
-		test();
-
-
-		function x() {}
-		10
-		20
 	</script>
 </body>
