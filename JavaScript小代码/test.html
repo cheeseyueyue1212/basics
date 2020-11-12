@@ -1,37 +1,39 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        * {
+          margin:0;
+          padding:0;
+          border:0;
+        }
+
+        #outer {
+          width:300px;
+          height:300px;
+          background-color:red;
+          margin-right:20px;
+		  display: inline-block;
+        }
+
+        #inner {
+          width:50px;
+          height:50px;
+          background-color:blue;
+          margin-left:10px;
+		  display: inline-block;
+        }
+
+    </style>
+</head>
 <body>
-	<div id="info">
-		<div class="box-1" onclick="box1()">
-			最外层
-			<div class="box-2" onclick="box2()">
-				第二层
-				<div class="box-3" onclick="box3()">
-					第三层
-					<div class="box-4" onclick="bubbles()">最底</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script>
-		let arr = [2, 4, 6, 8, 10];
-		let ar = arr.reduce((pre, curr, i, arr) => {
-			console.log('i:', i)
-			// return pre.concat(curr * 2)
-		})
-		console.log(ar)
-
-
-		function reduce(arr, pre, callBackFn) {
-			if(!Array.isArray(arr) || !arr.length || typeof callBackFn !== 'function') {
-				return []
-			} else {
-				let hasPre = pre !== undefined;
-				let value = hasPre ? pre: arr[0];
-
-				for(var i = hasPre ? 0 : 1; i < arr.length; i++) {
-					value = callBackFn(value, arr[i], i, arr);
-				}
-				return value;
-			}
-		}
-	</script>
+<div id="outer">
+111
+</div>
+<div id="inner">
+	222
+</div>
+<p>注释：请注意，如果不设置 div 的内边距和边框，那么内部 div 的上外边距将与外部 div 的上外边距合并（叠加）。</p>
 </body>
+</html>

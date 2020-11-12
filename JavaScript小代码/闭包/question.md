@@ -43,3 +43,19 @@
 ```
 
 结果是："My Object"
+
+
+# 知识点3
+
+# 调用counter() counter() counter() 输出 0， 1， 2 
+```js
+let counter = (function() {
+    let num = 0;
+    return function() {
+        return num++
+    }
+})()
+console.log(counter())
+console.log(counter())
+console.log(counter())
+```
