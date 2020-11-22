@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>弹出窗口</title>
+	<style>
+
+		/* 垂直水平居中 */
+		.mask_content {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: red;
+			width: 100px;
+			height: 100px;
+			margin: 0 auto;
+			color: darkkhaki;
+			font-size: 25px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="mask">
+		<div class="mask_content me">111</div>
+	</div>
+</body>
+<script>
+	var me = document.getElementsByClassName('me')[0]
+	var number = 0;
+	var timeOne=Date.now();  //起始时间1
+    function animate(time) {
+        console.log(time);  //这个time 是每次进入执行动画经过的毫秒数
+        var timeTwo = Date.now();  //起始时间1
+        if (timeTwo - timeOne >=1000) {  //差值就是中间暂停的时间啦（消化手抓饼）
+            me.innerText = '我是' + number + '只小青龙';
+            number++;
+            timeOne = timeTwo;
+        }
+        id = requestAnimationFrame(animate);//异步，传入的函数在重绘之前调用 
+    }
+    animate();
+
+</script>
+
+</html>

@@ -121,30 +121,69 @@ console.log(addBigInt(a, b));
 
 ```js
 function addBigInt(str1, str2) {
-    var arr1 = str1.length >= str2.length ? str1.split('').reverse() : str2.split('').reverse();
-    var arr2 = str1.length < str2.length ? str1.split('').reverse() : str2.split('').reverse();
-    arr1.forEach((item, i) => arr1[i] = Number(item) );
-    arr2.forEach((item, i) => arr2[i] = Number(item) );
+	let arr1 = str1.split('').reverse(),
+		arr2 = str2.split('').reverse(),
+		i = 0,
+		pre = 0,
+		res = []
 
-    var res = [];
-    var pre = 0;
-    for(var i = 0; i < arr1.length; i++) {
-        var num1 = arr1[i] ? arr1[i] : 0
-        var num2 = arr2[i] ? arr2[i] : 0
-        var val = (num1 + num2) + pre;
+		while(i < arr1.length || i < arr2.length) {
+			let a1 = arr1[i] ? Number(arr1[i]) : 0,
+				a2 = arr2[i] ? Number(arr2[i]) : 0
+			let target = a1 + a2 + pre
+			target = target > 9 ? target - 10 : target
+			res.unshift(target)
+			pre = (a1 + a2 + pre) > 9 ? 1 : 0
+			i++
+		}
 
-        var item = val > 9 ? Number(val.toString().slice(1)) : val;
-
-        res.push(item);
-        pre = val > 9 ? 1 :0
-        
-    }
-
-    return res.reverse().join('');
+		return res.join('')
 }
-var a ='11111';
-var b = '1189';
-console.log(addBigInt(a, b));
+var a ='123456789123456789';
+var b = '23456789123456789';
+console.log(addBigInt(a, b))
+
+
+
+
+	function addBigInt(str1, str2) {
+		let arr1 = str1.split(''),
+			arr2 = str2.split(''),
+			i = arr1.length - 1,
+			j = arr2.length - 1,
+			res = [],
+			pre = 0
+
+		while (i >= 0 || j >= 0) {
+			let target = 0
+			if (i >= 0) {
+				target = target + Number(arr1[i])
+				i--
+			}
+			if (j >= 0) {
+				target = target + Number(arr2[j])
+				j--
+			}
+			target = target + pre
+			if (target > 9) {
+				target = target - 10
+				pre = 1
+			} else {
+				pre = 0
+			}
+			res.unshift(target)
+		}
+
+		if (pre > 0) {
+			res.unshift(pre)
+		}
+
+		return res.join('')
+	}
+
+	var a = '123456789123456789';
+	var b = '23456789123456789';
+	console.log(addBigInt(a, b))
 ```
 
 # 4. 求数组中两个元素相加为某个值的两个坐标（要求O(n)复杂度）

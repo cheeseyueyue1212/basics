@@ -20,7 +20,9 @@ Promise.all1 = function(promises) {
                 if(results.length === promises.length) {
                     resolve(results);
                 }
-            })
+            }).catch((err) => {
+                reject(err)
+            });
         })
     })
 }

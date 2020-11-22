@@ -11,20 +11,20 @@ React.PureComponent 与 React.Component 很相似。两者的区别在于 React.
 
     class Counter extends React.Component {
         state = {
-        count: 0
-    }
-    handleClick = () => {
-        this.setState({ count: this.state.count + 1 })
-    }
-    render() {
-    return (
-    <div>
-        <Title title='计数器'></Title>
-        <span>{this.state.count}</span>
-        <button onClick={this.handleClick}>+1</button>
-    </div>
-        );
-    }
+            count: 0
+        }
+        handleClick = () => {
+            this.setState({ count: this.state.count + 1 })
+        }
+        render() {
+            return (
+            <div>
+                <Title title='计数器'></Title>
+                <span>{this.state.count}</span>
+                <button onClick={this.handleClick}>+1</button>
+            </div>
+                );
+        }
     }
 
     class Title extends React.PureComponent {
