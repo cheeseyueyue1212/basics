@@ -11,22 +11,48 @@ fibonacci(3) // => 2
 */
 
 const fibonacci = (n) => {
-    if (n === 2 || n === 1) {
-        return 1
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2)
+  if (n === 2 || n === 1) {
+    return 1
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2)
 }
 
 
 //我们还可以进一步优化，由于缓存cache在每次计算都是需要反问的，也就是说cache是需要保留在内存中的，那么我们就可以构造一个闭包，让cache保留在闭包中，供递归时使用：
 const fibonacci = ((cache = {}) => n => {
-    if (cache[n]) {
-      return cache[n];
-    }
-    if (n <= 2) {
-      return cache[n] = 1;
-    }
-    return cache[n] = fibonacci(n - 1) + fibonacci(n - 2);
-  })();
-  
-  console.log(fibonacci(1000));
+  if (cache[n]) {
+    return cache[n];
+  }
+  if (n <= 1) {
+    return cache[n] = 1;
+  }
+  return cache[n] = fibonacci(n - 1) + fibonacci(n - 2);
+})();
+
+console.log(fibonacci(1000));
+
+//方法二：
+function fibonacci(n) {
+  let res1 = 1,
+    res2 = 1
+  sum = res1;
+  for (var i = 1; i < n; i++) {
+    sum = res1 + res2
+    res1 = res2
+    res2 = sum
+
+  }
+
+  return sum;
+}
+console.log(fibonacci(3))
+
+//方法三：
+function fibonacci(n) {
+  if (n <= 1) {
+    return 1
+  }
+
+  return fibonacci(n - 1) + fibonacci(n - 2)
+}
+console.log(fibonacci(5))

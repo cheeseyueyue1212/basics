@@ -37,22 +37,17 @@ window.test2()
 
 # 问题二：
 var A = function(){
-
   this.arr = [1,2,3]
-
 }
 
 var B = function(){}
-
 B.prototype = new A()
 
 var a1 = new B()
-
 var a2 = new B()
 
 a1.arr.push(4)
-
-console.log(a2.arr)
+console.log(a2.arr)   
 
 
 var s1 = new A()
