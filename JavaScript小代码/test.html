@@ -1,79 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<style>
-	html,
-	* {
-		padding: 0;
-		margin: 0;
-	}
+	<title>display:inline-block元素之间空隙的产生原因和解决办法</title>
+	<style type="text/css">
+		.parent .child {
+			display: inline-block;
+			background-color: #fdfd04;
+			width: 100px;
+			height: 100px;
+		}
 
-	#layout {
-		background: red;
-		/* display: flex; */
-	}
-
-	.left {
-
-		background: pink;
-		width: 100px;
-		height: 10000px;
-		float: left;
-	}
-
-	.right {
-		background: #ccc;
-		/* flex: 1; */
-		overflow: hidden;
-		/* width: 100px; */
-		height: 100px;
-	}
-</style>
+		.parent {
+			/* display: table; */
+			word-spacing: -1em;
+			/*兼容其他浏览器，题主还未验证*/
+		}
+	</style>
 </head>
 
 <body>
-	<section id="layout">
-		<div class="left"></div>
-		<div class="right"></div>
-	</section>
+	<div class="parent">
+		<div class="child">child1</div>
+		<div class="child">child2</div>
+	</div>
 </body>
 <script>
-
-const a = { b: {c: 1, d: {e: 1}}}
-
-console.log(flattenKeys(a))
-
-//["b","b.c","b.d", "b.d.e"]
-
-
-function flattenKeys(a, res = [], preKey) {
-	for(var key in a) {
-		if(preKey !== undefined) {
-			let item= preKey + '.' + key
-			res.push(item)
-		} else {
-			res.push(key)
-		}
-		
-		if(typeof a[key] == 'object'){
-			if(preKey !== undefined) {
-				preKey = preKey + '.' + key
-			} else {
-				preKey = key
+	var tree = {
+		value: "-",
+		left: {
+			value: '+',
+			left: {
+				value: 'a',
+			},
+			right: {
+				value: '*',
+				left: {
+					value: 'b',
+				},
+				right: {
+					value: 'c',
+				}
 			}
-			flattenKeys(a[key], res, preKey)
+		},
+		right: {
+			value: '/',
+			left: {
+				value: 'd',
+			},
+			right: {
+				value: 'e',
+			}
 		}
 	}
 
-	return res;
-}
+	function bianli(tree) {
+		let stack = [tree],
+			res = [],
+			index = 0
 
+		while(index < stack.length){
+			res.push(stack[index].value)
+			stack[index].left && stack.push(stack[index].left)
+			stack[index].right && stack.push(stack[index].right)
+			index++
+		}
+		return res;
+	}
+
+	console.log(bianli(tree))
 </script>
-</body>
 
 </html>

@@ -19,6 +19,7 @@
     }
 	.parent{
 		display: table;
+    word-spacing:-1em;/*兼容其他浏览器，题主还未验证*/
 	}
   </style>
 </head>

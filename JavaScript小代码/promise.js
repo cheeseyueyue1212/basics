@@ -57,3 +57,6 @@ function sleep(time) {
     var t2= new Date;
     console.log(t2 - t1);
 }()
+
+
+// 优雅的请求 https://segmentfault.com/a/1190000020980804?utm_source=tag-newest
