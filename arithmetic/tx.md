@@ -194,7 +194,7 @@ function getTargetIndexs(arr, sum) {
     let obj = {};
     let res;
     let arr1 = []
-    arr.map((item, i) => {
+    arr.forEach((item, i) => {
         res = sum - item
         if(obj[res] !== undefined) {
             arr1.push([obj[res], i])

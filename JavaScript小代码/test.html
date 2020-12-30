@@ -1,74 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>display:inline-block元素之间空隙的产生原因和解决办法</title>
-	<style type="text/css">
-		.parent .child {
-			display: inline-block;
-			background-color: #fdfd04;
-			width: 100px;
-			height: 100px;
-		}
-
-		.parent {
-			/* display: table; */
-			word-spacing: -1em;
-			/*兼容其他浏览器，题主还未验证*/
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 
 <body>
-	<div class="parent">
-		<div class="child">child1</div>
-		<div class="child">child2</div>
-	</div>
+    <div class="box">
+        <?xml version="1.0" standalone="no"?>
+        <!-- <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> -->
+
+        <svg version="1.1">
+            <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+        </svg>  
+    </div>
+    <script>
+        var my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var arr = my_list.sort(function () {
+            console.log('arguments:', arguments)
+            console.log([...arguments][0], ':----', Math.random() - 0.5)
+            return Math.random() - 0.5
+        })
+        console.log(arr)
+// [4, 8, 2, 9, 1, 3, 6, 5, 7]
+    </script>
 </body>
-<script>
-	var tree = {
-		value: "-",
-		left: {
-			value: '+',
-			left: {
-				value: 'a',
-			},
-			right: {
-				value: '*',
-				left: {
-					value: 'b',
-				},
-				right: {
-					value: 'c',
-				}
-			}
-		},
-		right: {
-			value: '/',
-			left: {
-				value: 'd',
-			},
-			right: {
-				value: 'e',
-			}
-		}
-	}
-
-	function bianli(tree) {
-		let stack = [tree],
-			res = [],
-			index = 0
-
-		while(index < stack.length){
-			res.push(stack[index].value)
-			stack[index].left && stack.push(stack[index].left)
-			stack[index].right && stack.push(stack[index].right)
-			index++
-		}
-		return res;
-	}
-
-	console.log(bianli(tree))
-</script>
 
 </html>
