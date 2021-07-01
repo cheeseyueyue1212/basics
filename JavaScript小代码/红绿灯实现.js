@@ -94,4 +94,4 @@ async function lights() {
         i = i%3
     }
 }
-lights()1
+lights()
