@@ -27,3 +27,10 @@
 ## Javascript无阻塞加载具体方式：
 
 1. 将脚本放在底部。还是放在head中，用以保证在js加载前，能加载出正常显示的页面。
+
+参考： https://blog.csdn.net/qq_43952245/article/details/103437429
+
+https://juejin.cn/post/6844903667733118983
+
+当页面只存在css，或者js都在css前面，那么DomContentLoaded不需要等到css加载完毕。
+当页面里同时存在css和js，并且js在css后面的时候，DomContentLoaded必须等到css和js都加载完毕才触发。
