@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex实现正方形</title>
+  <style>
+    /* 方法一 */
+/* .square-wrapper {
+    display: flex;
+}
+.square {
+    flex: 1;
+}
+.square::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    background: yellow;
+} */
+
+/* 方法二 */
+.square-wrapper {
+    display: flex;
+}
+.square {
+    flex: 1;
+    background: yellow;
+}
+.square::after {
+    content: "";
+    display: block;
+    margin-bottom: 100%;
+}
+
+/* 方法三 */
+/* .square {
+    width: 20vw;
+    background: yellowgreen;
+}
+.square::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+} */
+
+
+  </style>
+</head>
+
+<body>
+  <div class="square-wrapper">
+    <div class="square"></div>
+    <div class="square"></div>
+</div>
+
+</body>
+
+</html>

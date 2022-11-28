@@ -8,11 +8,14 @@ display: flex;
 - flex-direction
 - flex-wap
 - justify-content
-- align-item
+- align-items
 - align-content
+
 - flex-grow
 - flex-shink
 - flex-basic
+- order
+- flex
 
 - align-self: auto || flex-start || flex-end || center || stretch || baseline
 

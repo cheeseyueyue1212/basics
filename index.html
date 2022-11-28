@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>display:inline-block元素之间空隙的产生原因和解决办法</title>
+  <style type="text/css">
+  	.parent .child {
+      background-color: #fdfd04;
+      margin: 10px;
+    }
+
+  .child1 {
+      float: left;
+      border: 4px solid red;
+      display: block;
+      width: 100%;
+    }
+
+    .child2 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background: yellowgreen;
+      word-break: break-all;
+      border: 4px solid red;
+    }
+  </style>
 </head>
 <body>
-  
+  <div class="parent">
+    <div class="child child1">child1</div>
+    <div class="child2 child">child2</div>
+  </div>
 </body>
-<script src="./test.js"></script>
-<script>
-      window.location.href = 'www.baidu.com'
-      alert(1111)
-</script>
 </html>
