@@ -130,7 +130,7 @@ Object.defineProperty(B, 'myMethodB', {
 Object.getOwnPropertyNames(B); // ["a", "aa", "getA", "myMethodA", "myMethodB"]
 ```
 
-### Object.getOwnPropertyNames和Object.keysq区别
+### Object.getOwnPropertyNames和Object.keys区别
 Object.getOwnPropertyNames和Object.keys的区别，即Object.keys只适用于可枚举的属性，而Object.getOwnPropertyNames返回对象自动的全部属性名称。
 
 ```js

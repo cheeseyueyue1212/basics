@@ -127,9 +127,8 @@ let obj = {}
 var a = new Preson()
 
 a.__proto__== Person.prototype
-a.__proto.__proto == Function.prototype
-a.__proto.__proto__.__proto__ === Object.prototype
-a.__proto__.__proto__.__proto__.__proto__ == null
+a.__proto__.__proto__ == Object.prototype
+a.__proto__.__proto__.__proto__ == null
 
 Function.__proto__ === Function.prototype
 

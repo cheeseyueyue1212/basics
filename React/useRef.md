@@ -43,3 +43,8 @@ function Counter() {
   return <h1>Now: {count}, before: {prevCount}</h1>;
 }
 ```
+
+
+### ImperativeHandleDemo forwardRef
+
+https://www.jianshu.com/p/92def9e95af5

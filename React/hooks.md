@@ -57,3 +57,6 @@ useReducer: https://blog.csdn.net/stone805/article/details/92786435s
 1. 如果你的页面state很简单，可以直接使用useState
 2. 如果你的页面state比较复杂（state是一个对象或者state非常多散落在各处）请使用userReducer
 3. 如果你的页面组件层级比较深，并且需要子组件触发state的变化，可以考虑useReducer + useContext
+
+自定义hook:
+https://juejin.cn/post/6890738145671938062

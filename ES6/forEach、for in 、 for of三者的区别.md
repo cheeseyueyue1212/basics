@@ -8,7 +8,7 @@ for(var i = 0 ; i< arr.length ; i++){
 	console.log(arr[i])
 }
 ```
-**for循环中可以使用return、break等来中断循环**
+**for循环中可以使用break等来中断循环**
 
 ## forEach
 对数组的每一个元素执行一次提供的函数（**不能使用return、break等中断循环**），不改变原数组，无返回值undefined。

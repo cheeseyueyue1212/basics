@@ -19,13 +19,13 @@
 
 * render:
      > react最重要的步骤，创建虚拟dom， 进行diff算法，更新dom树都在此进行  
-     > Tip： 记住，不要在render里面修改state  
+     > Tip： 记住，不要在render里面修改state, 会导致页面一直刷新
 
 * componentDiDMount:
      > 所有的组件（包括自组件）在render执行之后立即调用，并且只会被调用一次  
      > 组件已经初始化完成  
-     > DOM树渲染完成  
-     > Tip: 建议在次请求数据  
+     > DOM树渲染完成
+     > Tip: 建议在次请求数据 原因：https://juejin.cn/post/6844903782044663816  
 
 ## 这个React 16之后有三个生命周期被废弃(但并未删除)
 * componentWillReceiveProps(nextProps){}:

@@ -58,3 +58,5 @@ JavaScript 首先搜索以查看变量是否存在于本地，然后才在更高
 
 来自：
 https://www.zhihu.com/question/21217074/answer/760630367
+
+自己写的： https://note.youdao.com/s/FliIDAHf

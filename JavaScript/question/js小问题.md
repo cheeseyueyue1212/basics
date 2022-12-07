@@ -256,6 +256,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_
     var bar = foo;
     foo.x = foo = {n: 2};
 
+
+
+
+    
+
 var a = {n:1}; /*定义a，赋值为{n:1}，假设指向存储地址为add_1*/
 var b = a; /*定义b，赋值为a，指向同一存储地址add_1*/  
 a.x = a = {n:2};
