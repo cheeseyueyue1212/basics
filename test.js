@@ -1,6 +1,2 @@
-Array.prototype.reducer = function (callBack, initVal) {
-  this.res = initVal
-  for(var i = 0; i < this.length; i++) {
-    
-  }
-}
+arr = [1, 2, 3, [4, [5, 6]]]
+arr.flat()

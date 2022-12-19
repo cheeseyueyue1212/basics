@@ -1,6 +1,6 @@
 let arr1 = [1, 2, 4, 13]
 let arr2 = [3, 6, 7, 8, 9, 10]
-
+// 归并排序思想
 function myContant(arr1, arr2) {
     let arr3 = [];
     let i = 0,

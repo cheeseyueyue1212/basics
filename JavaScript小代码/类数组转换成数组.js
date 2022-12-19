@@ -5,7 +5,7 @@ var toArr = {
 }
 
 //方法一：
-Array.prototype.slice.call(toArr)
+Array.prototype.slice.call(toArr) // ????
 
 
 //方法二： Array.from

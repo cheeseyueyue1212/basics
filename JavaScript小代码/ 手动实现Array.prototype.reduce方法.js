@@ -17,3 +17,16 @@ function reduce(arr, reduceCallback, initialValue) {
       return value;
     }
   }
+
+  // 自己写的：
+  Array.prototype.reducer1 = function (callBack, initVal) {
+    if (!Array.isArray(this) || this.length <= 0 || typeof callBack !== 'function') {
+      return []
+    }
+    let res = !!initVal ? initVal : this[0]
+    const hasInitVal = !!initVal
+    for(var i = hasInitVal? 0 : 1; i < this.length; i++) {
+      res = callBack(res, this[i], i, this)
+    }
+    return res
+  }

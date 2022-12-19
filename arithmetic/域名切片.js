@@ -16,3 +16,16 @@ function GetUrlParam(paraName) {
         return "";
     }
 }
+
+//自实现：
+function getParma(url) {
+    let arr = url.split('?')[1]?.split('&')
+    let obj = {}
+    if (!arr) return ''
+    for (var i = 0; i < arr.length; i++) {
+        const [key, val] = arr[i].split('=')
+        obj[key] = val
+    }
+    return obj
+}
+getParma(url)

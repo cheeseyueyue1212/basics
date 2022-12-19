@@ -22,7 +22,7 @@ if(a==1 && a ==2 && a==3) {
 ![] == [] //true
 
 [] == [] //false
-![] == [] //true
+![] == [] //true 。。。[] == ![]为什么是true。!的优先级比==要高，所以会先执行![]。也就是先把[]转为布尔类型再取反。[]转布尔值是true,为什么呢？因为在JavaScript里除了false自身以外只有5个假值，分别是“”，undefined, null, 0， NaN。除了这5个假值以外，其他所有值转布尔类型都是true。一切对象都是真值，包括new Boolean(false)。于是问题就成了刚才我们讨论的 [] == false了。故得到 [] == ![]为true
 
 
 {} == {} //false
@@ -37,7 +37,7 @@ null == undefined
 //这里并没有涉及 == 比较，只需要判断 [] 是true还是false即可
 
 
-[] == false
+[] == false // true
 
 //参考：https://blog.csdn.net/itcast_cn/article/details/82887895
 
