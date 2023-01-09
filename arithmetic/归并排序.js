@@ -24,3 +24,4 @@ function mergeSort(array){
 
 var arr = mergeSort([32,12,56,78,76,45,36]);
 console.log(arr);   // [12, 32, 36, 45, 56, 76, 78]
+

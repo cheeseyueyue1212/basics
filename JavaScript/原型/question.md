@@ -77,7 +77,7 @@ var F = function () {}
 Object.prototype.a = function () {}
 Function.prototype.b = function () {}
 
-var f = new F()  
+var f = new F()
 // 请问f有方法a  方法b吗
 ```
 

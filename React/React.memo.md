@@ -18,21 +18,21 @@ function Child({seconds}){
 };
 
 function areEqual(prevProps, nextProps) {
-    if(prevProps.seconds===nextProps.seconds){
+    if(prevProps.seconds === nextProps.seconds){
         return true
     }else {
         return false
     }
 
 }
-export default React.memo(Child,areEqual)
+export default React.memo(Child, areEqual)
 ```
 
 ### React.memo() 与Redux
 ```js
 import React from "react";
 
-function Child({seconds,state}){
+function Child({seconds, state}){
     console.log('I am rendering');
     return (
       <div>
@@ -48,3 +48,4 @@ export default connect(mapStateToProps)(React.memo(Child))
 ```
 
 参照：https://www.jianshu.com/p/b3d07860b778
+
